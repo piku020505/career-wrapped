@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Wrapped 2026: Concept Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1C4980;--cobalt:#1F4FD8;--yellow:#FFC629;--violet:#7B5CF5;--ink:#14213D;--body:#3E4556;--muted:#667085;--line:#D5DCEA;--bg:#F2F5FF;--soft:#EAF0FF;--green:#0F8A4E}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);
+  background-image:linear-gradient(rgba(28,73,128,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(28,73,128,.05) 1px,transparent 1px);background-size:48px 48px}
+button,input,select{font:inherit}
+.top{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+.top .in{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mark{width:36px;height:36px;border-radius:10px;background:var(--cobalt);color:#fff;display:grid;place-items:center;font:700 15px Poppins}
+.brand{font:700 18px Poppins;color:var(--navy)}
+.brand small{display:block;font:500 12px Inter;color:var(--muted)}
+.flag{margin-left:auto;font:600 12px Inter;color:var(--navy);background:var(--yellow);padding:6px 12px;border-radius:999px}
+.seg{display:flex;background:var(--soft);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;padding:9px 16px;border-radius:9px;font:600 14px Poppins;color:var(--navy);cursor:pointer}
+.seg button.on{background:#fff;box-shadow:0 1px 3px rgba(20,33,61,.15);color:var(--cobalt)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px;display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:36px;align-items:start}
+@media (max-width:920px){.wrap{grid-template-columns:1fr}.phonecol{position:static!important;margin:0 auto}}
+.kicker{display:inline-block;font:700 12px Poppins;letter-spacing:1px;text-transform:uppercase;color:var(--navy);background:var(--yellow);padding:4px 10px;border-radius:6px;transform:rotate(-1deg)}
+h1{font:400 44px/1.05 Anton,sans-serif;text-transform:uppercase;color:var(--navy);margin:12px 0 8px;letter-spacing:.3px}
+h1 span{color:var(--cobalt)}
+.lede{color:var(--body);font-size:15px;line-height:1.55;margin:0 0 20px;max-width:620px}
+.steps{display:flex;gap:8px;margin:0 0 16px;flex-wrap:wrap}
+.steps div{display:flex;align-items:center;gap:8px;font:600 13px Poppins;color:var(--muted);background:#fff;border:1px solid var(--line);padding:7px 12px;border-radius:999px}
+.steps div b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--navy);font-size:12px}
+.steps div.on{color:var(--cobalt);border-color:var(--cobalt)}
+.steps div.on b{background:var(--cobalt);color:#fff}
+.steps div.done b{background:var(--green);color:#fff}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:14px}
+.card h3{font:600 16px Poppins;margin:0 0 4px;color:var(--navy)}
+.card p.sub{margin:0 0 14px;color:var(--muted);font-size:13.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.grid2{grid-template-columns:1fr}}
+label.f{display:block;font:600 12.5px Inter;color:var(--body);margin-bottom:6px}
+input[type=text],select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);outline:none}
+input[type=text]:focus,select:focus{border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(31,79,216,.12)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;color:var(--body);padding:8px 13px;border-radius:999px;font:500 13.5px Inter;cursor:pointer}
+.chip.on{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.range{display:flex;align-items:center;gap:14px}
+.range input{flex:1;accent-color:var(--cobalt)}
+.range b{font:400 26px Anton;color:var(--cobalt);min-width:40px;text-align:right}
+.consent{display:flex;gap:12px;align-items:flex-start;background:var(--soft);border-radius:12px;padding:14px}
+.consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--cobalt)}
+.consent div{font-size:13.5px;line-height:1.5;color:var(--body)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.btn{border:0;border-radius:12px;padding:12px 18px;font:600 14.5px Poppins;cursor:pointer}
+.btn.p{background:var(--cobalt);color:#fff}
+.btn.p:disabled{background:#A9B8E8;cursor:not-allowed}
+.btn.s{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+.btn.y{background:var(--yellow);color:var(--navy)}
+.hide{display:none!important}
+.events{font:500 12.5px ui-monospace,Menlo,monospace;background:#0F1B33;color:#C9D6F5;border-radius:12px;padding:12px 14px;max-height:160px;overflow:auto}
+.events div{padding:2px 0}.events em{color:var(--yellow);font-style:normal}
+.note{font-size:12.5px;color:var(--muted);line-height:1.5}
+/* phone */
+.phonecol{position:sticky;top:84px}
+.phone{width:360px;margin:0 auto;background:#0E1424;border-radius:46px;padding:12px;box-shadow:0 24px 60px rgba(20,33,61,.28)}
+.screen{position:relative;height:720px;border-radius:36px;overflow:hidden;background:#fff}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:26px;background:#0E1424;border-radius:20px;z-index:3}
+.sb{display:flex;justify-content:space-between;padding:14px 26px 0;font:600 13px Inter;position:relative;z-index:2}
+.illus{position:absolute;right:14px;top:46px;z-index:4;font:700 10px Poppins;letter-spacing:.5px;background:var(--yellow);color:var(--navy);padding:3px 8px;border-radius:6px}
+/* story card */
+.story{position:absolute;inset:0;padding:54px 22px 22px;color:#fff;display:flex;flex-direction:column;background:linear-gradient(165deg,#1F4FD8 0%,#1C4980 48%,#14213D 100%)}
+.prog{display:flex;gap:5px;margin-bottom:16px}.prog i{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,.3)}.prog i.on{background:#fff}
+.stag{font:700 12px Poppins;letter-spacing:3px;color:var(--yellow)}
+.sname{font:500 15px Poppins;color:#C9D6F5;margin-top:14px}
+.arch{font:400 64px/.95 Anton;text-transform:uppercase;margin-top:6px}
+.arch span{color:var(--yellow)}
+.sline{font-size:13px;line-height:1.45;color:#D6E2FF;margin-top:10px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}
+.stats div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:10px 12px}
+.stats b{display:block;font:400 30px/1.05 Anton}.stats small{font-size:11.5px;color:#C9D6F5}
+.cmp{margin-top:12px;background:rgba(255,255,255,.08);border-radius:14px;padding:10px 12px;font-size:12px}
+.bar{height:7px;background:rgba(255,255,255,.15);border-radius:5px;margin:5px 0 8px}.bar i{display:block;height:7px;border-radius:5px}
+.sfoot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-size:11.5px;color:#C9D6F5}
+.sfoot b{font:700 13px Poppins;color:#fff}
+/* goals card */
+.goal{position:absolute;inset:0;padding:54px 22px 22px;display:flex;flex-direction:column;background:#FFF;color:var(--ink)}
+.goal .gtop{background:var(--yellow);border-radius:20px;padding:18px;position:relative;overflow:hidden}
+.goal .gtop:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(28,73,128,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(28,73,128,.08) 1px,transparent 1px);background-size:22px 22px}
+.goal .gtop *{position:relative;z-index:1}
+.gk{font:700 11px Poppins;letter-spacing:2px;color:var(--navy)}
+.gt{font:400 34px/1.05 Anton;text-transform:uppercase;color:var(--navy);margin-top:8px}
+.gt span{background:var(--cobalt);color:#fff;padding:0 8px;display:inline-block;max-width:100%;transform:rotate(-1.5deg);margin-top:4px}
+.gm{font:500 13px Inter;color:var(--navy);margin-top:10px}
+.op{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-top:9px}
+.op .ic{width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-size:17px}
+.op b{display:block;font:600 13px Poppins}.op small{color:var(--muted);font-size:11.5px}
+.lock{margin-top:auto;background:var(--navy);color:#fff;border-radius:16px;padding:14px;text-align:center;font:600 14px Poppins}
+.lock small{display:block;font:500 11.5px Inter;color:#C9D6F5;margin-top:3px}
+/* share + signup screens */
+.share{position:absolute;inset:0;background:#0B0F1A;display:flex;flex-direction:column;align-items:center;padding:50px 16px 16px}
+.share .mini{width:220px;height:390px;border-radius:18px;overflow:hidden;position:relative;transform:scale(1);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.sticker{margin-top:-28px;position:relative;z-index:2;background:#fff;color:var(--cobalt);font:600 12.5px Poppins;padding:8px 14px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.targets{display:flex;gap:14px;margin-top:22px}
+.targets button{border:0;background:none;color:#fff;font:500 11px Inter;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
+.targets span{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:20px;background:#1F2638}
+.signup{position:absolute;inset:0;background:var(--bg);padding:54px 20px 20px;display:flex;flex-direction:column;gap:10px}
+.signup .hero{background:#fff;border-radius:18px;padding:16px;border:1px solid var(--line)}
+.signup .in{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;font-size:13.5px;color:var(--muted)}
+.signup .in.f{color:var(--ink)}
+.signup .go{background:var(--cobalt);color:#fff;border-radius:12px;padding:13px;text-align:center;font:600 14px Poppins}
+.signup .ok{background:#E8F7EF;color:var(--green);border-radius:12px;padding:10px 12px;font:600 13px Poppins}
+.pcap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font:500 13.5px Inter;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="top"><div class="in">
+  <div class="mark">CW</div>
+  <div class="brand">Career Wrapped 2026<small>Concept for Operation 10 Lakh</small></div>
+  <div class="seg" role="tablist">
+    <button id="mUser" class="on" onclick="setMode('user')">I’m on Unstop</button>
+    <button id="mNew" onclick="setMode('new')">I’m new here</button>
+  </div>
+  <div class="flag">Concept prototype · not an official Unstop product</div>
+</div></div>
+
+<div class="wrap">
+<main>
+  <span class="kicker" id="kick">Journey A · existing users</span>
+  <h1 id="h1">Your year on Unstop, <span>made to share</span></h1>
+  <p class="lede" id="lede">Every active student gets a 9:16 recap of their year: challenges, shortlists, streaks and an archetype. Each shared card carries a personal link that brings friends to Unstop.</p>
+
+  <div class="steps" id="steps"></div>
+
+  <!-- Journey A -->
+  <section id="A">
+    <div class="card" id="a1">
+      <h3>1 · Consent</h3>
+      <p class="sub">Nothing is generated until the student opts in (DPDP-ready).</p>
+      <label class="consent"><input type="checkbox" id="consent" onchange="upd()"><div><b>Use my 2026 Unstop activity to build my recap.</b><br>In this demo, the activity below is sample data you set yourself.</div></label>
+    </div>
+    <div class="card" id="a2">
+      <h3>2 · Your year (sample data)</h3>
+      <p class="sub">In production these values come from the student’s real activity.</p>
+      <div class="grid2">
+        <div><label class="f">First name</label><input type="text" id="name" value="Riya" oninput="upd()"></div>
+        <div><label class="f">Stream</label><select id="stream" onchange="upd()"><option>Commerce</option><option>Engineering</option><option>Arts</option><option>Science</option><option>MBA</option></select></div>
+      </div>
+      <div style="height:14px"></div>
+      <label class="f">What you did this year</label>
+      <div class="chips" id="acts"></div>
+      <div style="height:14px"></div>
+      <label class="f">Challenges entered</label>
+      <div class="range"><input type="range" id="n" min="1" max="40" value="14" oninput="upd()"><b id="nv">14</b></div>
+      <div class="row" style="margin-top:14px"><button class="btn p" id="toShare" onclick="goShare()">Preview my share →</button></div>
+    </div>
+    <div class="card hide" id="a3">
+      <h3>3 · Share</h3>
+      <p class="sub">The card goes to Stories with a personal link; friends who tap it land on a sign-up page.</p>
+      <div class="row">
+        <button class="btn p" onclick="copyCap()">Copy caption</button>
+        <button class="btn s" onclick="copyLink()">Copy my link</button>
+        <button class="btn y" onclick="simSignup()">Simulate a friend signing up</button>
+        <button class="btn s" onclick="back()">← Edit</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey B -->
+  <section id="B" class="hide">
+    <div class="card">
+      <h3>1 · Your goals card</h3>
+      <p class="sub">New students have no history yet, so they build a goals card instead.</p>
+      <div class="grid2">
+        <div><label class="f">First name</label><input type="text" id="gname" value="Aarav" oninput="updB()"></div>
+        <div><label class="f">Year</label><select id="gyear" onchange="updB()"><option>1st year</option><option selected>2nd year</option><option>3rd year</option><option>Final year</option></select></div>
+        <div><label class="f">Stream</label><select id="gstream" onchange="updB()"><option>Arts</option><option>Commerce</option><option>Science</option><option>Engineering</option></select></div>
+        <div><label class="f">Main goal for 2027</label><select id="ggoal" onchange="updB()"><option>First internship</option><option>Win a competition</option><option>Land a job</option><option>Build a skill</option></select></div>
+      </div>
+      <div style="height:14px"></div>
+      <label class="f">Interests</label>
+      <div class="chips" id="ints"></div>
+      <div class="row" style="margin-top:14px"><button class="btn p" onclick="goSignup()">Save my card → sign up</button></div>
+    </div>
+    <div class="card hide" id="b2">
+      <h3>2 · Join Unstop to save it</h3>
+      <p class="sub">Sign-up takes about 60 seconds. The real activity recap unlocks as the student uses Unstop.</p>
+      <div class="row"><button class="btn s" onclick="backB()">← Edit card</button></div>
+    </div>
+  </section>
+
+  <div class="card">
+    <h3>Tracking events (what analytics would see)</h3>
+    <p class="sub">Every step fires an event, so the funnel from open → share → new sign-up is measured, not guessed.</p>
+    <div class="events" id="ev"></div>
+  </div>
+  <p class="note">Built as a concept for a growth-case submission (The Lakhpati Internship, Think like a Growth Hacker) by Pravin Kumar Mahato, BIT Mesra. <b>Not an official Unstop product.</b> All names, numbers, percentiles and opportunities shown are illustrative sample data, not real Unstop data.</p>
+</main>
+
+<aside class="phonecol">
+  <div class="phone"><div class="screen" id="screen"></div></div>
+  <div class="pcap" id="pcap">Live preview · illustrative</div>
+</aside>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const ACTS=["Hackathons","Case competitions","Quizzes","Internship applications","Mock interviews","Courses"];
+const INTS=["Marketing","Finance","Design","Data","Content","Consulting","Coding","Policy"];
+const st={mode:"user",step:1,acts:new Set(["Case competitions","Internship applications"]),ints:new Set(["Marketing","Content"]),signedUp:false};
+const $=id=>document.getElementById(id);
+function chips(el,list,set,cb){$(el).innerHTML="";list.forEach(a=>{const b=document.createElement("button");b.className="chip"+(set.has(a)?" on":"");b.textContent=a;b.onclick=()=>{set.has(a)?set.delete(a):set.add(a);b.classList.toggle("on");cb()};$(el).appendChild(b)})}
+function ev(name,props){const d=document.createElement("div");const t=new Date().toTimeString().slice(0,8);d.innerHTML=`${t} <em>${name}</em> ${props?JSON.stringify(props):""}`;$("ev").prepend(d)}
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),1600)}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function archetype(){const a=st.acts,n=+$("n").value;
+  if(a.has("Hackathons")&&n>=10)return["THE","BUILDER"];
+  if(a.has("Case competitions"))return["THE","STRATEGIST"];
+  if(a.has("Mock interviews")||a.has("Internship applications"))return["THE","GO-GETTER"];
+  if(a.has("Quizzes"))return["THE","QUIZ MASTER"];
+  return["THE","EXPLORER"]}
+function steps(){const s=st.mode==="user"?["Consent","Your year","Share"]:["Goals card","Sign up"];
+  $("steps").innerHTML=s.map((x,i)=>`<div class="${i+1<st.step?"done":i+1===st.step?"on":""}"><b>${i+1<st.step?"✓":i+1}</b>${x}</div>`).join("")}
+function storyHTML(mini){const n=+$("n").value,a=archetype(),name=esc($("name").value||"You"),stream=$("stream").value;
+  const top=Math.max(5,Math.round(42-n*.8-st.acts.size*2));const short=Math.max(1,Math.round(n/5));const streak=Math.min(60,6+n+st.acts.size*3);
+  return `<div class="story"${mini?' style="padding:24px 14px 14px"':''}><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+  <div class="stag">CAREER WRAPPED 2026</div><div class="sname">${name}, your 2026 says you’re</div>
+  <div class="arch"${mini?' style="font-size:44px"':''}>${a[0]}<br><span>${a[1]}</span></div>
+  ${mini?"":`<div class="sline">${stream} student · ${st.acts.size} kinds of opportunities tried · never missed a Sunday deadline.</div>`}
+  <div class="stats"><div><b>${n}</b><small>challenges</small></div><div><b style="color:#FFC629">TOP ${top}%</b><small>${stream}, India*</small></div>${mini?"":`<div><b>${short}</b><small>shortlists</small></div><div><b>${streak}</b><small>day streak</small></div>`}</div>
+  ${mini?"":`<div class="cmp"><div style="display:flex;justify-content:space-between"><span>You</span><b>${n}</b></div><div class="bar"><i style="width:${Math.min(100,n*2.5)}%;background:#FFC629"></i></div><div style="display:flex;justify-content:space-between"><span>Your batch avg*</span><b>6</b></div><div class="bar"><i style="width:15%;background:#7B5CF5"></i></div></div>`}
+  <div class="sfoot"><span>*sample data</span><b>Make yours →</b></div></div>`}
+function sb(dark){return `<div class="island"></div><div class="sb" style="color:${dark?"#fff":"#14213D"}"><span>10:24</span><span>5G ▮▮▮</span></div>`}
+function render(){steps();const s=$("screen");
+  if(st.mode==="user"){
+    if(st.step<3){ if(!$("consent").checked){s.innerHTML=sb(false)+`<div class="signup"><div class="hero" style="text-align:center;margin-top:40px"><div style="font:400 40px Anton;color:#1C4980">YOUR 2026</div><div style="font:600 15px Poppins;color:#1F4FD8">is ready to unwrap</div><p style="font-size:13px;color:#667085">Tick consent to build your card.</p></div></div>`;$("pcap").textContent="Waiting for consent"}
+      else{s.innerHTML=sb(true)+`<div class="illus">ILLUSTRATIVE</div>`+storyHTML(false);$("pcap").textContent="Story card · 9:16"}}
+    else{s.innerHTML=sb(true)+`<div class="share"><div class="mini">${storyHTML(true)}</div><div class="sticker">🔗 Make yours · ref=${(esc($("name").value)||"you").toLowerCase().slice(0,8)}26</div>
+      <div class="targets"><button onclick="shareTo('instagram_story')"><span>📸</span>Story</button><button onclick="shareTo('whatsapp_status')"><span>💬</span>Status</button><button onclick="shareTo('linkedin')"><span>💼</span>LinkedIn</button><button onclick="shareTo('copy_link')"><span>🔗</span>Copy</button></div></div>`;$("pcap").textContent="Share sheet"}
+  }else{
+    const nm=esc($("gname").value||"You"),goal=$("ggoal").value,yr=$("gyear").value,str=$("gstream").value;const ints=[...st.ints].slice(0,3);
+    const icons={"Marketing":"📣","Finance":"💹","Design":"🎨","Data":"📊","Content":"✍️","Consulting":"🧭","Coding":"💻","Policy":"🏛️"};
+    if(st.step===1){s.innerHTML=sb(false)+`<div class="illus">ILLUSTRATIVE</div><div class="goal"><div class="gtop"><div class="gk">MY 2027 CAREER GOALS</div><div class="gt">${nm}’S<br><span>${esc(goal)}</span></div><div class="gm">${yr} · ${str}</div></div>
+      <div style="font:600 12px Poppins;color:#667085;margin-top:14px">MATCHED FOR YOU (SAMPLE)</div>
+      ${(ints.length?ints:["Marketing"]).map(i=>`<div class="op"><div class="ic">${icons[i]||"⭐"}</div><div><b>${i} ${goal==="Win a competition"?"challenges":goal==="Land a job"?"roles":goal==="Build a skill"?"courses":"internships"}</b><small>Open to ${str.toLowerCase()} students · this month</small></div></div>`).join("")}
+      <div class="lock">Join Unstop to save this card<small>Your real recap unlocks as you use Unstop</small></div></div>`;$("pcap").textContent="Goals card · new student"}
+    else{s.innerHTML=sb(false)+`<div class="signup"><div class="hero"><div style="font:600 12px Poppins;color:#667085">SAVE YOUR CARD</div><div style="font:400 30px Anton;color:#1C4980;margin-top:4px">${nm}, YOU’RE 60 SECONDS AWAY</div></div>
+      <div class="in f">+91 98•••• ••210</div><div class="in f">OTP · 4 8 2 7</div><div class="in f">${str} · ${yr}</div>
+      ${st.signedUp?`<div class="ok">✓ Account created · goals card saved</div><div class="hero"><div style="font:600 13px Poppins;color:#1C4980">Your first 3 opportunities (sample)</div>${ints.map(i=>`<div style="font-size:12.5px;color:#3E4556;margin-top:6px">• ${i} · apply by 15 Dec</div>`).join("")}</div>`:`<div class="go" onclick="doSignup()" style="cursor:pointer">Verify & save →</div>`}</div>`;$("pcap").textContent="Sign-up · 60 seconds"}
+  }}
+function upd(){$("nv").textContent=$("n").value;$("toShare").disabled=!$("consent").checked;if(st.mode==="user")st.step=$("consent").checked?2:1;render()}
+function updB(){render()}
+function goShare(){st.step=3;$("a3").classList.remove("hide");$("a2").classList.add("hide");$("a1").classList.add("hide");ev("card_generated",{archetype:archetype()[1].toLowerCase(),challenges:+$("n").value});render()}
+function back(){st.step=2;$("a3").classList.add("hide");$("a2").classList.remove("hide");$("a1").classList.remove("hide");render()}
+function shareTo(ch){ev("share_clicked",{channel:ch});toast("Shared to "+ch.replace("_"," ")+" (demo)")}
+function capText(){return `My 2026 on Unstop: ${archetype().join(" ")} 🚀 ${$("n").value} challenges this year. What’s yours? #CareerWrapped #BeUnstoppable`}
+function copyCap(){const t=capText();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast("Caption copied")).catch(()=>toast(t));ev("caption_copied")}
+function copyLink(){ev("share_clicked",{channel:"copy_link"});toast("Link copied (demo link)")}
+function simSignup(){ev("landing_view",{ref:"share"});setTimeout(()=>ev("signup_completed",{source:"career_wrapped",attribution:"first_touch"}),350);setTimeout(()=>ev("first_action",{type:"applied",within_days:2}),700);toast("A friend joined from your card (demo)")}
+function goSignup(){st.step=2;$("b2").classList.remove("hide");ev("goals_card_created",{goal:$("ggoal").value,stream:$("gstream").value});render()}
+function backB(){st.step=1;st.signedUp=false;$("b2").classList.add("hide");render()}
+function doSignup(){st.signedUp=true;ev("signup_completed",{source:"goals_card"});render()}
+function setMode(m){st.mode=m;$("mUser").classList.toggle("on",m==="user");$("mNew").classList.toggle("on",m==="new");
+  $("A").classList.toggle("hide",m!=="user");$("B").classList.toggle("hide",m!=="new");
+  if(m==="user"){$("kick").textContent="Journey A · existing users";$("h1").innerHTML="Your year on Unstop, <span>made to share</span>";$("lede").textContent="Every active student gets a 9:16 recap of their year: challenges, shortlists, streaks and an archetype. Each shared card carries a personal link that brings friends to Unstop.";st.step=$("consent").checked?($("a3").classList.contains("hide")?2:3):1}
+  else{$("kick").textContent="Journey B · new students";$("h1").innerHTML="No history yet? <span>Make a goals card</span>";$("lede").textContent="Friends who tap a shared card build a 2027 goals card, then join Unstop to save it. Their real recap unlocks as they use the platform.";st.step=$("b2").classList.contains("hide")?1:2}
+  ev("mode_selected",{journey:m});render()}
+chips("acts",ACTS,st.acts,()=>render());chips("ints",INTS,st.ints,()=>render());
+ev("wrapped_open",{source:"in_app_banner"});upd();
+</script>
+</body>
+</html>
